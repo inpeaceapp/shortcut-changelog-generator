@@ -8,7 +8,7 @@ def get_repo_from_workdir():
 def tags_sorted():
     repo = get_repo_from_workdir()
 
-    return repo.tags
+    return sorted(repo.tags, key=lambda t: t.commit.committed_datetime)
 
 def filter_stories_id_between_tags():
     repo = get_repo_from_workdir()
